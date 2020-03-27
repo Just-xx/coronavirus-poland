@@ -6,7 +6,6 @@ import Info from '../components/Info/Info'
 import TwitterEmbed from '../components/TwitterEmbed/TwitterEmbed'
 import { CoronaProvider } from '../contexts/coronaContext'
 import LastUpdate from '../components/LastUpdate/LastUpdate'
-import TweetsContainer from '../components/TweetsContainer/TweetsContainer'
 import Title from '../components/Title/Title'
 
 const IndexPage = () => (
