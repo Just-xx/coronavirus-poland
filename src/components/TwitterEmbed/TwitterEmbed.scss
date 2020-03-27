@@ -17,6 +17,14 @@
   font-size: 1rem;
   color: #fff;
   font-weight: 600;
+
+  @media screen and (max-width: 1080px)  {
+    font-size: .75rem;
+  }
+
+  @media screen and (max-width: 450px)  {
+    font-size: .6rem;
+  }
 }
 
 .twitter-mz-embed {
@@ -45,6 +53,9 @@
   color: #fff;
   display: flex;
   align-items: center;
+  font-family: "Montserrat";
+  white-space: nowrap;
+  text-align: center;
 
   svg {
     margin-left: 10px;
