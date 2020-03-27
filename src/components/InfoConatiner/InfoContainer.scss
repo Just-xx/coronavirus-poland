@@ -1,0 +1,10 @@
+.info-container {
+  height: 96vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.4);
+}
