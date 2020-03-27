@@ -1,0 +1,26 @@
+$bgc: #FF3D3D;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-size: 30px;
+  background-color: $bgc;
+  color: #fff;
+  font-weight: 500;
+}
+
+* {
+  font-family: "Montserrat";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

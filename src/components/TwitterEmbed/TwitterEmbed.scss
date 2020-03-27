@@ -1,0 +1,64 @@
+
+.twitter-embed-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #282828;
+  overflow: hidden;
+}
+
+.mz-title {
+  text-align: center;
+  margin: 15px 0;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.twitter-mz-embed {
+  height: 84vh;
+  max-height: 750px;
+  max-width: 800px;
+  width: 90vw;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 4px 20px 0 rgba(0, 0, 0, 0.1), 2px 2px 2px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+
+.show-hide-btn {
+  background-color: transparent;
+  padding: 8px 22px;
+  border-radius: 20px;
+  border: none;
+  font-size: 0.6rem;
+  font-weight: 500;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-left: 10px;
+    fill: #fff;
+    width: 17px;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.hide-btn {
+  margin-bottom: 15px;
+  position: static;
+  transform: translateX(0);
+}

@@ -1,20 +1,23 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../components/Layout/Layout"
+import SEO from "../components/Seo/Seo"
+import Info from '../components/Info/Info'
+import TwitterEmbed from '../components/TwitterEmbed/TwitterEmbed'
+import { CoronaProvider } from '../contexts/coronaContext'
+import LastUpdate from '../components/LastUpdate/LastUpdate'
+import TweetsContainer from '../components/TweetsContainer/TweetsContainer'
+import Title from '../components/Title/Title'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO />
+    <CoronaProvider>
+      <Title />
+      <Info />
+      <LastUpdate />
+      <TwitterEmbed />
+    </CoronaProvider>
   </Layout>
 )
 
