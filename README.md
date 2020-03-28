@@ -1,5 +1,6 @@
 # What is that?
 This is polish app that shows current coronavirus confirmed/dead/recoverd cases.
+
 App is using React.js(Gatsby.js).
 
 ## API
