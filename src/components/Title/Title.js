@@ -29,7 +29,7 @@ const Title = () => {
         duration: 1
       }}
     >
-      Obecny stan zachorowań na <span style={{ whiteSpace: "nowrap" }}>SARS-CoV-2</span> w Polsce
+      Obecny stan zachorowań na <span style={{ whiteSpace: "nowrap" }}>COVID-19</span> w Polsce
     </motion.div>
   ) : null
 }
