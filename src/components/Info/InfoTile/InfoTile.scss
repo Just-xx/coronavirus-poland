@@ -9,7 +9,10 @@ $recovered: #7DFF9F;
   align-items: center;
   text-align: center;
   font-weight: 700;
-  margin: 0 100px;
+  margin: 0 70px;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 20px 30px;
+  border-radius: 5px;
   
   &.confirmed { color: $infected; }
   &.deaths { color: $dead; }

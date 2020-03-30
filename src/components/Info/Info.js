@@ -26,10 +26,8 @@ const Info = () => {
       initial="hidden"
       animate="visible"
       transition={{ 
-        duration: 1,
         ease: "easeOut",
-        staggerChildren: 0.4,
-        delayChildren: 0.9
+        staggerChildren: 0.4
       }}
     >
       <InfoTile count={coronaData.recovered} type="recovered" />
