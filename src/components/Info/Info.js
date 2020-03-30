@@ -3,15 +3,11 @@ import './Info.scss'
 import InfoTile from './InfoTile/InfoTile'
 import coronaContext from '../../contexts/coronaContext'
 import { motion } from 'framer-motion'
+import Title from './Title/Title'
 
-const motionStates = {
-  hidden: {
-    opacity: 0,
-    y: "10px"
-  },
-  visible: {
-    opacity: 1,
-    y: 0
+const variants = {
+  loaded: {
+    transition: { staggerChildren: 0.4, delayChildren: 0.2 }
   }
 }
 
@@ -19,22 +15,23 @@ const Info = () => {
 
   const coronaData = React.useContext(coronaContext)
 
-  return (!coronaData.error && coronaData.lastUpdate) ? (
+  return (
     <motion.div
-      className="info-section"
-      variants={motionStates}
+      className="info-container"
       initial="hidden"
-      animate="visible"
-      transition={{ 
-        ease: "easeOut",
-        staggerChildren: 0.4
-      }}
+      animate={coronaData.isFetched && coronaData.success ? "loaded" : "hidden"}
     >
-      <InfoTile count={coronaData.recovered} type="recovered" />
-      <InfoTile count={coronaData.confirmed} type="confirmed" />
-      <InfoTile count={coronaData.deaths} type="deaths" />
+      <Title />
+      <motion.div
+        className="info-section"
+        variants={variants}
+      >
+        <InfoTile count={coronaData.recovered} type="recovered" />
+        <InfoTile count={coronaData.confirmed} type="confirmed" />
+        <InfoTile count={coronaData.deaths} type="deaths" />
+      </motion.div>
     </motion.div>
-  ) : (coronaData.error ? "Wystąpił nieoczekiwany błąd" : null)
+  )
 }
 
 export default Info

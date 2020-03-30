@@ -1,14 +1,13 @@
 import React from 'react'
 import "./Title.scss"
 import { motion } from 'framer-motion'
-import coronaContext from '../../contexts/coronaContext'
 
 const variants = {
   hidden: {
     opacity: 0,
     y: "-10px"
   },
-  visible: {
+  loaded: {
     opacity: 1,
     y: 0
   }
@@ -16,22 +15,15 @@ const variants = {
 
 const Title = () => {
 
-  const coronaData = React.useContext(coronaContext)
-
-  return ((coronaData.confirmed > -1) && !coronaData.error) ? (
+  return (
     <motion.div
       className="title"
       variants={variants}
-      initial="hidden"
-      animate="visible"
-      transition={{
-        ease: "easeOut",
-        duration: 1
-      }}
+      transition={{ ease: "easeOut", duration: 0.7 }}
     >
       Obecny stan zachorowań na <span style={{ whiteSpace: "nowrap" }}>COVID-19</span> w Polsce
     </motion.div>
-  ) : null
+  )
 }
 
 export default Title

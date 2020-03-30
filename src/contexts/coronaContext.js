@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const CoronaContext = React.createContext()
+const coronaContext = React.createContext()
 
 const CoronaProvider = ({ children }) => {
   
   const [coronaData, setCoronaData] = useState({
     recovered: -1,
     confirmed: -1,
-    deaths: -1
+    deaths: -1,
+    isFetched: false,
+    success: null,
+    error: null,
+    lastUpdate: null
   })
 
   useEffect(() => {
@@ -23,15 +27,23 @@ const CoronaProvider = ({ children }) => {
         country: "Poland"
       }
     })
-    .then(data => setCoronaData(data.data.data.covid19Stats[0]))
-    .catch(() => setCoronaData({ error: 'Wystąpił nieoczekiwany błąd :(' }))
+    .then(data => setCoronaData({
+      isFetched: true,
+      success: true,
+      ...data.data.data.covid19Stats[0]
+    }))
+    .catch(e => setCoronaData({
+      isFetched: true,
+      success: false,
+      error: e
+    }))
 
   }, [])
 
   return (
-    <CoronaContext.Provider value={coronaData}>
+    <coronaContext.Provider value={coronaData}>
       {children}
-    </CoronaContext.Provider>
+    </coronaContext.Provider>
   )
 }
 
@@ -40,4 +52,4 @@ export {
   CoronaProvider
 }
 
-export default CoronaContext
+export default coronaContext

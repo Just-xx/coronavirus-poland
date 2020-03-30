@@ -9,14 +9,18 @@ const labelTexts = {
   'deaths': 'śmierci',
 }
 
-const motionStates = {
+const variants = {
   hidden: {
     translateY: "10px",
     opacity: 0
   },
-  visible: {
+  loaded: {
     opacity: 1,
-    translateY: 0
+    translateY: 0,
+    transition: {
+      duration: 0.7,
+      ease: 'easeOut'
+    }
   }
 }
 
@@ -24,14 +28,10 @@ const InfoTile = ({ type, count }) => {
 
   const labelText = labelTexts[type]
 
-  
-
-  return count !== -1 && (
+  return (
     <motion.div
-      key={type}
       className={`info-tile ${type}`}
-      variants={motionStates}
-      transition={{ duration: 0.9, ease: 'easeOut' }}
+      variants={variants}
     >
       <div className="count">{count}</div>
       <div className="label">{labelText}</div>
