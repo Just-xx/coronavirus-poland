@@ -10,9 +10,7 @@ const CoronaProvider = ({ children }) => {
     confirmed: -1,
     deaths: -1,
     isFetched: false,
-    success: null,
-    error: null,
-    lastUpdate: null
+    success: null
   })
 
   useEffect(() => {

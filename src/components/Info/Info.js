@@ -21,15 +21,22 @@ const Info = () => {
       initial="hidden"
       animate={coronaData.isFetched && coronaData.success ? "loaded" : "hidden"}
     >
-      <Title />
-      <motion.div
-        className="info-section"
-        variants={variants}
-      >
-        <InfoTile count={coronaData.recovered} type="recovered" />
-        <InfoTile count={coronaData.confirmed} type="confirmed" />
-        <InfoTile count={coronaData.deaths} type="deaths" />
-      </motion.div>
+      {coronaData.success || coronaData.success === null ?
+        <> 
+          <Title />
+          <motion.div
+            className="info-section"
+            variants={variants}
+            >
+            <InfoTile count={coronaData.recovered} type="recovered" />
+            <InfoTile count={coronaData.confirmed} type="confirmed" />
+            <InfoTile count={coronaData.deaths} type="deaths" />
+          </motion.div>
+        </> :
+        <div>
+          Wystąpił nieoczekiwany błąd :(
+        </div>
+      }
     </motion.div>
   )
 }
