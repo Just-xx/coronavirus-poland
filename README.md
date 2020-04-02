@@ -7,3 +7,6 @@ This app is using RapidAPI coronavirus REST API.
 
 ## Link
 App is hosted [here](https://dreamy-edison-da9516.netlify.com) on Netlify
+
+## Cel (pl)
+Projekt powstał m.in. w celu wykonania zadania na informatykę.
